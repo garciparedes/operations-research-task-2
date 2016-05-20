@@ -70,6 +70,34 @@
 		\subsection{Formular un modelo de PLE para determinar dónde se deben construir los transmisores para cubrir la mayor población con el límite del presupuesto de 5 millones de euros.}
 
 			\paragraph{}
+			Inicialmente puede pareceder que para modelar el problema harían falta más variables de las necesarias para resolver el problema, ya que intuitivamente necesitaríamos 7 variables para representar si se construye o no un transmisor y otras 15 para determinar si se cubre un municipio o no, es decir, en total necesitaríamos 22 variables. Pero si nos fijamos bien descubrimos que algunas de las poblaciones solo se pueden cubrir por un único transmisor por lo que son equivalentes. Modelando el problema de esta manera llegamos a la conclusión de que son necesarias $9 + 7 = 16$ variables, por lo que nos hemos ahorrado 6 variables y 6 restricciones.
+
+			\paragraph{}
+			La modelización del problema como de PLE es la siguiente:
+
+			\begin{itemize}
+				\item \(x_{i} = \) Se construye un transmisor en la localización i. $1<= i <= 7$
+
+				\item \(p_{j} \) La población j tiene señal de comunicación. $j \in {2,4,5,7,8,9,10,12,15}$ Nota: no es  $1<= j <= 15$ por las razones expuestas en el parrafo anterior.
+			\end{itemize}
+
+			\[
+				\begin{split}
+					\text{Max} z = 4x_{1} + 8p_{2} + 26x_{2} + 12p_{4} +18p_{5} + 8x_{4} + 16p_{7} \\
+						+ 24p_{8} +20p_{9} + 22p_{10}  +  12x_{6} + 28p_{12} + (18+6)x_{7} + 12p_{15} \\ \\
+						p_2 <= x_1 + x_2\\
+						p_4 <= x_1 + x_3\\
+						p_5 <= x_2 + x_4\\
+						p_7 <= x_3 + x_6\\
+						p_8 <= x_3 + x_4 + x_5\\
+						p_9 <= x_4 + x_5\\
+						p_10 <= x_3 + x_6\\
+						p_12 <= x_5 + x_6 + x_7\\
+						p_16 <= x_6 + x_7\\
+						p_{j}, x_{i} \in {0,1}\\
+				\end{split}
+			\]
+
 
 		\subsection{?`Cuántos transmisores se deben construir y en qué lugares? ?`Cuál es el tamaño de la población cubierto por esos transmisores? ?`Y el coste de la operación? ?`Existen municipios sin cubrir por esos transmisores?. Justificar las respuestas.}
 
@@ -104,7 +132,30 @@
 		\subsection{Formular un modelo PLE para resolver el problema.}
 
 			\paragraph{}
+			Para modelar este problema tenemos que descomponer el valor absoluto de la diferencia entre la longitud que ocupan los coches aparcados a un lado de la calle y los del otro dado que es el valor que queremos minimizar. Añadimos dos variables auxiliares que contendrán la longitud de cada uno de los lados para facilitar la lectura de los resultados.
 
+			\paragraph{}
+			Por lo tanto modelizaremos el problema de la siguiente manera:
+
+			\begin{itemize}
+				\item \(c_{i} => \) Longitud en metros del lado i de la calle. $i \in \{1,2\}$
+
+				\item \(x_{ij} => \) Variable binaria que indica si se aparca en el lado i de la calle el coche j  $i \in \{1,2\}$, $j \in {1,...,15}$,
+
+				\item \(y^{+}, y^{-} => \) Variables que descomponen la parte positiva y negativa de la diferencia entre un lado y otro de la calle.
+			\end{itemize}
+
+			\[
+				\begin{split}
+					\text{min} z = y^{+} + y^{-} \\ \\
+						y^{+} - y^{-} = c_1 - c_2 \\
+						c_i <= 4x_{i1} + 4.5x_{i2} + 5x_{i3} + 4.1x_{i4} + 2.4x_{i5} + 5.2x_{i6} + 3.7x_{i7} + 3.5x_{i8} \\
+						+ 3.2x_{i9} + 4.5x_{i10} + 2.3x_{i11} + 3.3x_{i12} + 3.8x_{i13} + 4.6x_{i14} + 3x_{i15}, i \in \{1,2\}\\
+						x_{1j} + x_{2j} = 1, j \in \{1,...,15\} \\
+						x_{ij} \in {0,1}, i \in \{1,2\},j \in \{1,...,15\} \\
+						c_{i}, y^{+}, y^{-} >= 0, i \in \{1,2\}\\
+				\end{split}
+			\]
 		\subsection{Indicar la solución óptima del modelo planteado en el apartado anterior.}
 
 			\paragraph{}

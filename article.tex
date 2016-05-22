@@ -98,6 +98,10 @@
 						p_{j}, x_{i} \in {0,1}\\
 				\end{split}
 			\]
+			\begin{figure}[H]
+			\centering
+	            \includegraphics[width=0.75\textwidth]{res/exercise-1-result.png}
+	        \end{figure}
 
 
 		\subsection{?`Cuántos transmisores se deben construir y en qué lugares? ?`Cuál es el tamaño de la población cubierto por esos transmisores? ?`Y el coste de la operación? ?`Existen municipios sin cubrir por esos transmisores?. Justificar las respuestas.}
@@ -120,6 +124,15 @@
 		\subsection{?`Cuántos CD debe utilizar y qué archivos debe ubicar en cada uno de ellos? Justificar la respuesta.}
 
 			\paragraph{}
+			\begin{figure}[H]
+	        \centering
+	            \includegraphics[width=0.75\textwidth]{res/exercise-2-result-a.png}
+	        \end{figure}
+
+			\begin{figure}[H]
+	        \centering
+	            \includegraphics[width=0.75\textwidth]{res/exercise-2-result-b.png}
+	        \end{figure}
 
 
 	\section{Ejercicio 3}
@@ -160,8 +173,34 @@
 		\subsection{Indicar la solución óptima del modelo planteado en el apartado anterior.}
 
 			\paragraph{}
+			\begin{figure}[H]
+
+			\centering
+	            \includegraphics[width=0.75\textwidth]{res/exercise-3-result.png}
+	        \end{figure}
 
 		\subsection{Supongamos ahora que en uno de los lados de la calle no deben ocupar más de 15 metros. Formular y resolver este nuevo problema.}
 
 			\paragraph{}
+			Para resolver este nuevo problema tendremos que definir una nueva variable binaria que denominaremos \textbf{b} y utilizaremos para representar la dicotomía entre cual de los dos lados de la calle es el que no podrá superar los 15 metros. A este nuevo problema habrá que añadirle dos restricciones correspondientes a la dicotomía. Por lo tanto la modelización es la siguiente:
+
+			\[
+				\begin{split}
+					\text{min} z = y^{+} + y^{-} \\ \\
+						y^{+} - y^{-} = c_1 - c_2 \\
+						c_1 - 15 <= Mb \\
+						c_2 - 15 <= M(1-b) \\
+						c_i = 4x_{i1} + 4.5x_{i2} + 5x_{i3} + 4.1x_{i4} + 2.4x_{i5} + 5.2x_{i6} + 3.7x_{i7} + 3.5x_{i8} \\
+						+ 3.2x_{i9} + 4.5x_{i10} + 2.3x_{i11} + 3.3x_{i12} + 3.8x_{i13} + 4.6x_{i14} + 3x_{i15}, i \in \{1,2\}\\
+						x_{1j} + x_{2j} = 1, j \in \{1,...,15\} \\
+						x_{ij} \in \{0,1\}, i \in \{1,2\},j \in \{1,...,15\} \\
+						b, c_{i}, y^{+}, y^{-} >= 0, i \in \{1,2\}\\
+				\end{split}
+			\]
+
+			\begin{figure}[H]
+
+			\centering
+	            \includegraphics[width=0.75\textwidth]{res/exercise-3-c-result.png}
+	        \end{figure}
 \end{document}

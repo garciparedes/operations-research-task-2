@@ -70,7 +70,7 @@
 		\subsection{Formular un modelo de PLE para determinar dónde se deben construir los transmisores para cubrir la mayor población con el límite del presupuesto de 5 millones de euros.}
 
 			\paragraph{}
-			Inicialmente puede pareceder que para modelar el problema harían falta más variables de las necesarias para resolver el problema, ya que intuitivamente necesitaríamos 7 variables para representar si se construye o no un transmisor y otras 15 para determinar si se cubre un municipio o no, es decir, en total necesitaríamos 22 variables. Pero si nos fijamos bien descubrimos que algunas de las poblaciones solo se pueden cubrir por un único transmisor por lo que son equivalentes. Modelando el problema de esta manera llegamos a la conclusión de que son necesarias $9 + 7 = 16$ variables, por lo que nos hemos ahorrado 6 variables y 6 restricciones.
+			Inicialmente puede parecer que para modelar el problema harían falta más variables de las realmente necesarias para resolverlo ya que intuitivamente necesitaríamos 7 variables para representar si se construye o no un transmisor y otras 15 para determinar si se cubre un municipio o no, es decir, en total necesitaríamos 22 variables. Pero si nos fijamos bien descubrimos que algunas de las poblaciones solo se pueden cubrir por un único transmisor por lo que son equivalentes. Modelando el problema de esta manera llegamos a la conclusión de que son necesarias $9 + 7 = 16$ variables, por lo que nos hemos ahorrado 6 variables y 6 restricciones.
 
 			\paragraph{}
 			La modelización del problema como de PLE es la siguiente:
@@ -125,7 +125,7 @@
 		\subsection{Suponiendo que Martín no tiene ningún programa para comprimir los archivos, formular un modelo de PLE para determinar cómo se deben distribuir los archivos con el fin de reducir al mínimo el número de discos CD-ROM que debe utilizar.}
 
 			\paragraph{}
-			Modelizaremos el problema como si se pudiera dar el peor caso, es decir, que cada fichero tan solo entrase en un CD-ROM. A pesar de ello para resolverlo hemos ido probando primero con 1 CD-ROM, pero al ver que no era factible seguidamente probamos con 2 y así sucesivamente hasta que hemos encontrado la solución óptima (3 CD-ROM's). El movivo de que sea así es que sino para resolver el problema necesitariamos $16 x 16 = 256$ variables de las cuales la mayoría serían innecesarias.
+			Modelizaremos el problema como si se pudiera dar el peor caso, es decir, que cada fichero tan solo entrase en un CD-ROM. A pesar de ello para resolverlo hemos ido probando primero con 1 CD-ROM, pero al ver que no era factible seguidamente probamos con 2 y así sucesivamente hasta que hemos encontrado la solución óptima (3 CD-ROM's). El movivo de que sea así es que sino para resolver el problema necesitariamos $16 x 16 + 16= 272$ variables de las cuales la mayoría serían innecesarias. Por contra se ha podido resolver utilizando $16 x 3 + 3 = 51$ variables.
 
 			\begin{itemize}
 
@@ -133,6 +133,7 @@
 
 				\item \(c_{i} => \) Variables que indica si se utilizará el CD-ROM i.
 			\end{itemize}
+
 			\[
 				\begin{split}
 					\text{Min} z = \sum_{i=1}^{16} c_{i} \\ \\
@@ -232,7 +233,6 @@
 				\end{split}
 			\]
 
-			\paragraph{}
 			\paragraph{}
 			Tal y como podemos ver en los resultados obtenidos en WinQSB que se muestran en la figura \ref{fig:ej3c} la solución al problema es la siguiente:
 			\paragraph{}

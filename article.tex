@@ -103,7 +103,15 @@
 		\subsection{?`Cuántos transmisores se deben construir y en qué lugares? ?`Cuál es el tamaño de la población cubierto por esos transmisores? ?`Y el coste de la operación? ?`Existen municipios sin cubrir por esos transmisores?. Justificar las respuestas.}
 
 			\paragraph{}
-
+			Tal y como podemos ver en los resultados obtenidos en WinQSB que se muestran en la figura \ref{fig:ej1} la solución óptima del problema es la siguiente:
+			\newline
+			Construir 4 transmisores en las localizaciones 2, 4, 6 y 7.
+			\newline
+			El tamaño de la población cubierta es 218 millones de personas.
+			\newline
+			El coste de la operación es de 4.75 millones de euros.
+			\newline
+			Si que existen municipios sin cubrir y son el 1, 3, 4 y 5.
 
 
 	\section{Ejercicio 2}
@@ -138,7 +146,20 @@
 			\]
 		\subsection{?`Cuántos CD debe utilizar y qué archivos debe ubicar en cada uno de ellos? Justificar la respuesta.}
 
+			\paragraph{}
+			Tal y como podemos ver en los resultados obtenidos en WinQSB que se muestran en la figura \ref{fig:ej2} la solución al problema es la siguiente:
 
+			\paragraph{}
+			La solución óptima del problema es utilizar 3 CD's distribuyendo los ficheros de la siguiente forma:
+
+			\begin{itemize}
+
+				\item \(CD1 =>\) Ficheros 6, 15 y 16
+
+				\item \(CD2 =>\) Ficheros 1, 8 , 12, 13 y 14.
+
+				\item \(CD3 =>\) Ficheros 2, 3, 4, 5, 7, 9, 10 y 11.
+			\end{itemize}
 
 
 	\section{Ejercicio 3}
@@ -179,6 +200,17 @@
 		\subsection{Indicar la solución óptima del modelo planteado en el apartado anterior.}
 
 			\paragraph{}
+			Tal y como podemos ver en los resultados obtenidos en WinQSB que se muestran en la figura \ref{fig:ej3} la solución al problema es la siguiente:
+
+			\paragraph{}
+			La solución óptima del problema es colocar los coches de la siguiente manera:
+
+
+			\begin{itemize}
+				\item \(Lado 1 => \) Coches 4, 6, 7, 9, 11, 12, 13 y 15 usando $28.6$ metros.
+
+				\item \(Lado 2 => \) Coches 1, 2, 3, 5, 8, 10 y 14 usando $28.5$ metros.
+			\end{itemize}
 
 
 		\subsection{Supongamos ahora que en uno de los lados de la calle no deben ocupar más de 15 metros. Formular y resolver este nuevo problema.}
@@ -200,7 +232,18 @@
 				\end{split}
 			\]
 
+			\paragraph{}
+			\paragraph{}
+			Tal y como podemos ver en los resultados obtenidos en WinQSB que se muestran en la figura \ref{fig:ej3c} la solución al problema es la siguiente:
+			\paragraph{}
+			La solución óptima del problema con las nuevas restricciones es colocar los coches de la siguiente manera:
 
+
+			\begin{itemize}
+				\item \(Lado 1 => \) Coches 1, 2, 3, 4, 6, 7, 9, 10, 12 y 14 usando $42.1$ metros.
+
+				\item \(Lado 2 => \) Coches 5, 8, 11, 13 y 15 usando $15$ metros.
+			\end{itemize}
 
 
 	\section{Resultados WinQSB}
@@ -208,20 +251,28 @@
 		\begin{figure}[H]
 		\centering
 			\includegraphics[width=0.75\textwidth]{res/exercise-1-result.png}
+			\caption{Resultados Ejercicio 1}
+  			\label{fig:ej1}
 		\end{figure}
 
 		\begin{figure}[H]
 		\centering
 			\includegraphics[width=0.75\textwidth]{res/exercise-2-result.png}
+			\caption{Resultados Ejercicio 2}
+  			\label{fig:ej2}
 		\end{figure}
 
 		\begin{figure}[H]
 		\centering
 			\includegraphics[width=0.75\textwidth]{res/exercise-3-result.png}
+			\caption{Resultados Ejercicio 3}
+  			\label{fig:ej3}
 		\end{figure}
 
 		\begin{figure}[H]
 		\centering
 			\includegraphics[width=0.75\textwidth]{res/exercise-3-c-result.png}
+			\caption{Resultados Ejercicio 3 C}
+  			\label{fig:ej3c}
 		\end{figure}
 \end{document}
